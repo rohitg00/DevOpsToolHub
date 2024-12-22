@@ -1,0 +1,53 @@
+{
+  "tools": [
+    {
+      "url": "https://github.com/kubernetes/kubernetes",
+      "name": "kubernetes",
+      "stars": 111833
+    },
+    {
+      "url": "https://github.com/docker/docker-ce",
+      "name": "docker-ce",
+      "stars": 5767
+    },
+    {
+      "url": "https://github.com/hashicorp/terraform",
+      "name": "terraform",
+      "stars": 43271
+    }
+  ],
+  "learning": [
+    {
+      "url": "https://github.com/kamranahmedse/developer-roadmap",
+      "name": "developer-roadmap",
+      "stars": 301767
+    },
+    {
+      "url": "https://github.com/bregman-arie/devops-exercises",
+      "name": "devops-exercises",
+      "stars": 67041
+    },
+    {
+      "url": "https://github.com/MichaelCade/90DaysOfDevOps",
+      "name": "90DaysOfDevOps",
+      "stars": 27411
+    }
+  ],
+  "resources": [
+    {
+      "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+      "name": "awesome-selfhosted",
+      "stars": 208029
+    },
+    {
+      "url": "https://github.com/veggiemonk/awesome-docker",
+      "name": "awesome-docker",
+      "stars": 30754
+    },
+    {
+      "url": "https://github.com/DovAmir/awesome-design-patterns",
+      "name": "awesome-design-patterns",
+      "stars": 40541
+    }
+  ]
+}

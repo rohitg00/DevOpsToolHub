@@ -1,0 +1,75 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+*.tsbuildinfo
+.vercel
+.repl
+.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+*.pem
+.project
+.classpath
+.settings/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Debug
+.debug/
+
+# Cache directories
+.npm/
+.eslintcache
+.stylelintcache
+.cache/
+
+# Misc
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+*.temp
+
+# TypeScript
+*.tsbuildinfo
+
+# Supabase
+**/supabase/.branches/
+**/supabase/.temp/
+
+# Project specific
+scripts/data/
+tmp/
+.vercel
+.local
+__pycache__/
+.cache
