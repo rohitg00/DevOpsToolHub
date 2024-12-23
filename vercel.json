@@ -25,8 +25,9 @@
     }
   ],
   "env": {
-    "SUPABASE_URL": "@vite_supabase_url",
-    "SUPABASE_ANON_KEY": "@vite_supabase_anon_key",
+    "VITE_SUPABASE_URL": "@supabase_url",
+    "VITE_SUPABASE_ANON_KEY": "@supabase_anon_key",
+    "VITE_SUPABASE_SERVICE_ROLE": "@supabase_service_role",
     "DATABASE_URL": "@database_url"
   }
 } 
