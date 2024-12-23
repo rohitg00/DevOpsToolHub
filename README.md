@@ -155,6 +155,89 @@ docker-compose up -d --build app
 docker-compose ps
 ```
 
+## 🚀 Deployment
+
+### Deploying to Vercel
+
+1. Fork this repository to your GitHub account
+
+2. Create a new project on Vercel:
+   - Go to [Vercel Dashboard](https://vercel.com/dashboard)
+   - Click "New Project"
+   - Import your forked repository
+   - Choose "DevOpsToolHub" as the project name
+
+3. Configure Environment Variables:
+   - In Vercel project settings, add the following environment variables:
+     ```
+     VITE_SUPABASE_URL=your_supabase_url
+     VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+     DATABASE_URL=your_database_url
+     ```
+
+4. Deploy Settings:
+   - Framework Preset: Vite
+   - Build Command: `npm run build`
+   - Output Directory: `client/dist`
+   - Install Command: `npm install`
+
+5. Click "Deploy" and wait for the build to complete
+
+### Vercel CLI Deployment
+
+1. Install Vercel CLI:
+```bash
+npm i -g vercel
+```
+
+2. Login to Vercel:
+```bash
+vercel login
+```
+
+3. Deploy the project:
+```bash
+vercel
+```
+
+4. For production deployment:
+```bash
+vercel --prod
+```
+
+### Environment Variables on Vercel
+
+To update environment variables:
+
+1. Using Vercel Dashboard:
+   - Go to Project Settings
+   - Click on "Environment Variables"
+   - Add or update variables
+
+2. Using Vercel CLI:
+```bash
+vercel env add VITE_SUPABASE_URL
+vercel env add VITE_SUPABASE_ANON_KEY
+vercel env add DATABASE_URL
+```
+
+### Deployment Troubleshooting
+
+1. Build Failures:
+   - Check build logs in Vercel dashboard
+   - Ensure all dependencies are properly listed
+   - Verify environment variables are set
+
+2. Runtime Errors:
+   - Check Function Logs in Vercel dashboard
+   - Verify API routes are properly configured
+   - Check Supabase connection
+
+3. Common Issues:
+   - CORS errors: Update API routes configuration
+   - 404 errors: Check vercel.json routing
+   - Build errors: Verify build commands and dependencies
+
 ## 🏗️ Tech Stack
 
 - **Frontend**:
