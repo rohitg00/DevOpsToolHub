@@ -6,6 +6,7 @@ import { Github, ExternalLink, Book } from "lucide-react";
 import { ToolPopularity } from "./tool-popularity";
 
 export function ToolGrid({ tools }: { tools: Tool[] }) {
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {tools.map((tool) => (
