@@ -21,14 +21,13 @@ export function ToolPage({ params }: { params: { name: string } }) {
 
       try {
         setLoading(true);
-        const response = await fetch(`/api/tools/${encodeURIComponent(params.name)}`);
+        const response = await fetch(`/api/tools/${params.name}`);
         
         if (!response.ok) {
           throw new Error(`Failed to fetch tool: ${response.statusText}`);
         }
         
         const data = await response.json();
-        console.log('Received tool data:', data);
         setTool(data);
         setError(null);
       } catch (err) {
@@ -71,6 +70,8 @@ export function ToolPage({ params }: { params: { name: string } }) {
     );
   }
 
+  const trimmedUrl = tool?.url?.replace('git+', '');
+
   return (
     <div className="container mx-auto py-8 px-4">
       <div className="flex justify-between items-start mb-8">
@@ -90,15 +91,15 @@ export function ToolPage({ params }: { params: { name: string } }) {
           <div className="flex gap-4">
             {tool.url && (
               <Button variant="outline" asChild>
-                <a href={tool.url} target="_blank" rel="noopener noreferrer">
+                <a href={trimmedUrl?.replace(" ", "")} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="w-4 h-4 mr-2" />
                   Website
                 </a>
               </Button>
             )}
-            {tool.githubUrl && (
+            {tool.url && (
               <Button variant="outline" asChild>
-                <a href={tool.githubUrl} target="_blank" rel="noopener noreferrer">
+                <a href={trimmedUrl?.replace(" ", "")} target="_blank" rel="noopener noreferrer">
                   <Github className="w-4 h-4 mr-2" />
                   GitHub
                 </a>
@@ -108,38 +109,6 @@ export function ToolPage({ params }: { params: { name: string } }) {
           </div>
         </div>
       </div>
-
-      {/* README Section */}
-      {tool.githubUrl && (
-        <div className="mt-8">
-          <Button
-            variant="outline"
-            className="w-full flex justify-between items-center mb-4"
-            onClick={() => setShowReadme(!showReadme)}
-          >
-            <span>View GitHub README</span>
-            {showReadme ? (
-              <ChevronUp className="w-4 h-4" />
-            ) : (
-              <ChevronDown className="w-4 h-4" />
-            )}
-          </Button>
-          
-          {showReadme && (
-            <div className="border rounded-lg overflow-hidden">
-              {tool.readme ? (
-                <div className="prose dark:prose-invert max-w-none p-6 bg-white dark:bg-gray-800">
-                  <Markdown>{tool.readme}</Markdown>
-                </div>
-              ) : (
-                <div className="p-6 text-gray-500 bg-white dark:bg-gray-800">
-                  No README available for this repository
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      )}
     </div>
   );
 }
